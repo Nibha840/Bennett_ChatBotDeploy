@@ -1,0 +1,29 @@
+═══════════════════════════════════════════════════════════════
+  🔧 FIX: Remove Virtual Environment from Git
+═══════════════════════════════════════════════════════════════
+
+ERROR: venv_fresh/ folder has files over 100MB (torch libraries)
+SOLUTION: Remove it from git tracking
+
+═══════════════════════════════════════════════════════════════
+  STEP 1: Remove venv_fresh from Git
+═══════════════════════════════════════════════════════════════
+
+Run in PowerShell:
+
+git rm -r --cached venv_fresh
+git commit -m "Remove virtual environment from git"
+
+═══════════════════════════════════════════════════════════════
+  STEP 2: Push Again
+═══════════════════════════════════════════════════════════════
+
+git push origin main
+
+═══════════════════════════════════════════════════════════════
+  ✅ DONE! venv_fresh is now in .gitignore
+═══════════════════════════════════════════════════════════════
+
+Virtual environments should NEVER be in GitHub!
+They can be recreated with: pip install -r requirements.txt
+
